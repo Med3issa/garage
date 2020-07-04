@@ -40,8 +40,8 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome to the server !");
 });
 
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-  console.log("server started !");
+  console.log("Server Started");
 });
