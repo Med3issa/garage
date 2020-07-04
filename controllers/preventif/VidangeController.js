@@ -23,7 +23,7 @@ app.post("/add", (req, res) => {
       res.status(200).send({ message: "vidange add seccsess * " });
     })
     .catch((err) => {
-      res.status(400).send({ message: "error - " });
+      res.status(400).send({err});
     });
 });
 

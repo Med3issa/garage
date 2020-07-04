@@ -46,7 +46,7 @@ app.delete('delete/:idTaxe',(req,res)=>{
 app.post("/add",(req,res)=>{
     let data = req.body;
     let  taxe= new Taxe({
-        id_car: data.id_car,
+        id_Car: data.id_Car,
         date_pay: data.date_pay,
         date_exp: data.date_exp,
         montant: data.montant,
@@ -58,7 +58,7 @@ app.post("/add",(req,res)=>{
         res.status(200).send({ message: "taxe add seccess"});
      })
         .catch((err)=>{
-        res.status(400).send({message: "error 11111111 "});
+        res.status(400).send({err});
     });
 
 });

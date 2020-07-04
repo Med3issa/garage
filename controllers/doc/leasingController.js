@@ -46,19 +46,19 @@ app.delete('delete/:idLeasing',(req,res)=>{
 app.post("/add",(req,res)=>{
     let data = req.body;
     let  leasing= new Leasing({
-        id_car: data.id_car,
+        id_Car: data.id_Car,
         tranche: data.tranche,
         etat: data.etat,
         montant: data.montant,
     });
     
-    taxe
+    leasing
      .save()
      .then((doc)=>{
-        res.status(200).send({ message: "taxe add seccess"});
+        res.status(200).send({ message: "leasing add seccess"});
      })
         .catch((err)=>{
-        res.status(400).send({message: "error "});
+        res.status(400).send({err});
     });
 
 });
