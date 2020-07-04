@@ -2,8 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const mongoose = require("./configdb/db");
+//const mongoose = require("./configdb/db");
 
+/*
 const carController = require("./controllers/CarController");
 const userController = require("./controllers/UserController");
 const taxeController = require("./controllers/doc/TaxeController");
@@ -16,12 +17,12 @@ const boujieController = require("./controllers/preventif/boujieController");
 const chaineController = require("./controllers/preventif/chaineController");
 const PneuController = require("./controllers/preventif/pneuController");
 const entretienController = require("./controllers/curatif/entretienController");
-
+*/
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-
+/*
 app.use("/car", carController);
 app.use("/user", userController);
 app.use("/ass", assuranceController);
@@ -34,7 +35,7 @@ app.use("/boujie", boujieController);
 app.use("/chaine", chaineController);
 app.use("/pneu", PneuController);
 app.use("/entretien", entretienController);
-
+*/
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to the server !");
 });
