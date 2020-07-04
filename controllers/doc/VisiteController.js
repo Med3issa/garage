@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/all",(req,res)=>{
-    Taxe.find()
+    Visite.find()
     .then((Visites)=>{
         res.send(Visites);
     })
@@ -21,7 +21,7 @@ app.get("/all",(req,res)=>{
 app.get("/one/:idVisite", (req,res)=>{
     let id = req.params.idVisite;
 
-    Visites.findOne({_id : id})
+    Visite.findOne({_id : id})
     .then((doc)=>{
         res.status(200).send(doc);
     })
@@ -31,7 +31,7 @@ app.get("/one/:idVisite", (req,res)=>{
 });
       
 
-app.delete('delete/:idVisite',(req,res)=>{
+app.delete('/delete/:idVisite',(req,res)=>{
     let id = req.params.idVisite;
 
     Visite.findByIdAndDelete({_id: id})
@@ -46,8 +46,8 @@ app.delete('delete/:idVisite',(req,res)=>{
 
 app.post("/add",(req,res)=>{
     let data = req.body;
-    let  taxe= new Visite({
-        id_car: data.id_car,
+    let  visite= new Visite({
+        id_Car: data.id_Car,
         date_pay: data.date_pay,
         date_exp: data.date_exp,
         montant: data.montant,
@@ -59,7 +59,7 @@ app.post("/add",(req,res)=>{
         res.status(200).send({ message: "Visite add seccess"});
      })
         .catch((err)=>{
-        res.status(400).send({message: "error "});
+        res.status(400).send({err});
     });
 
 });

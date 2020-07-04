@@ -29,7 +29,7 @@ app.get("/one/:idLeasing", (req,res)=>{
     })
 });
 
-app.delete('delete/:idLeasing',(req,res)=>{
+app.delete('/delete/:idLeasing',(req,res)=>{
     let id = req.params.idLeasing;
 
     Leasing.findByIdAndDelete({_id: id})

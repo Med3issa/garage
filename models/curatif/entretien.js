@@ -11,7 +11,7 @@ const entretienSchema = new mongoose.Schema({
     },
    
   
-    monton: {
+    montant: {
       type: Number,
       required: true,
     },

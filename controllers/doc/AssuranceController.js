@@ -29,7 +29,7 @@ app.get("/one/:idTaxe", (req, res) => {
     });
 });
 
-app.delete("delete/:idTaxe", (req, res) => {
+app.delete("/delete/:idTaxe", (req, res) => {
   let id = req.params.idTaxe;
 
   Taxe.findByIdAndDelete({ _id: id })

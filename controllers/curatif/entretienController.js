@@ -12,7 +12,7 @@ app.post("/add", (req, res) => {
   let entretien = new Entretien({
     id_Car: data.id_Car,
     label: data.label,
-    monton: data.monton,
+    montant: data.montant,
     
   });
 
@@ -22,7 +22,7 @@ app.post("/add", (req, res) => {
       res.status(200).send({ message: "entretien add seccsess * " });
     })
     .catch((err) => {
-      res.status(400).send({ message: "error - " });
+      res.status(400).send({err });
     });
 });
 
