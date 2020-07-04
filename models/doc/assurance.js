@@ -7,13 +7,13 @@ const assuranceSchema = new mongoose.Schema({
   },
   date_pay: {
     type: Date,
-   // required: true,
+   required: true,
    
   },
 
   date_exp: {
     type: Date,
-    //required: true,
+    required: true,
   },
 
   montant: {

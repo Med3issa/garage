@@ -39,6 +39,8 @@ app.get("/", function (req, res) {
   res.send("Welcome to the server !");
 });
 
-app.listen(3000,()=>{
+const port = 3000 || process.env.PORT
+
+app.listen(port,()=>{
     console.log("server started !");
 })
