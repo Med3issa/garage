@@ -43,13 +43,17 @@ app.post("login",(req,res)=>{
   let data = req.body;
   User.findOne({email:data.email})
   .then((doc) => {
-    res.status(200).send(doc);
+    if (data.password=doc.password){
+      res.status(200).send(doc);
+    }else
+    res.status(400).send({ message: "Error Find !" })
+    
 })
 .catch(() => {
     res.status(400).send({ message: "Error Find !" })
 })
   }
-)
+);
 
 
 
