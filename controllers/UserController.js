@@ -38,4 +38,19 @@ app.post("/add", (req, res) => {
     });
 });
 
+
+app.post("login",(req,res)=>{
+  let data = req.body;
+  User.findOne({email:data.email})
+  .then((doc) => {
+    res.status(200).send(doc);
+})
+.catch(() => {
+    res.status(400).send({ message: "Error Find !" })
+})
+  }
+  
+
+})
+
 module.exports = app;

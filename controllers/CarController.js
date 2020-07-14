@@ -77,7 +77,7 @@ app.delete('/delete/:idCar', (req, res) => {
 });
 
 app.post("/add", (req, res) => {
-  let data = req.body;
+ 
 
   let car = new Car({
     name: data.name,
